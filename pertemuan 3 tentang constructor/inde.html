@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+
+    <h2>Kalkulator Sederhana</h2>
+    <script>
+        // Definisi class Kalkulator
+        class Kalkulator {
+            constructor(angka1, angka2) {
+                this.angka1 = angka1;
+                this.angka2 = angka2;
+            }
+
+            tambah() {
+                return this.angka1 + this.angka2;
+            }
+
+            kurang() {
+                return this.angka1 - this.angka2;
+            }
+
+            kali() {
+                return this.angka1 * this.angka2;
+            }
+
+            bagi() {
+                if (this.angka2 === 0) {
+                    return "Error: Pembagian dengan nol tidak diperbolehkan!";
+                }
+                return this.angka1 / this.angka2;
+            }
+        }
+
+        let ulangi = true;
+        while (ulangi) {
+            // Menerima input dari user
+            let angka1 = parseFloat(prompt("Masukkan angka pertama: "));
+            let angka2 = parseFloat(prompt("Masukkan angka kedua: "));
+            let operasi = prompt("Pilih operasi (+, -, x, /): ");
+
+            // Membuat objek dari class Kalkulator
+            let kalkulator = new Kalkulator(angka1, angka2);
+            let hasil;
+
+            // Percabangan untuk operasi yang dipilih
+            switch (operasi) {
+                case "+":
+                    hasil = kalkulator.tambah();
+                    break;
+                case "-":
+                    hasil = kalkulator.kurang();
+                    break;
+                case "x":
+                case "*":  // Menambahkan opsi '*' selain 'x'
+                    hasil = kalkulator.kali();
+                    break;
+                case "/":
+                    hasil = kalkulator.bagi();
+                    break;
+                default:
+                    hasil = "Operasi tidak valid!";
+            }
+
+            // Menampilkan hasil
+            alert(`Hasil: ${hasil}`);
+
+            // Menanyakan apakah ingin mengulang
+            let jawaban = prompt("Apakah ingin mengulang? (ya/tidak)").toLowerCase();
+            if (jawaban !== "ya") {
+                ulangi = false;
+            }
+        }
+
+        alert("Terima kasih telah menggunakan kalkulator ini!");
+    </script>
+
+</body>
+</html>

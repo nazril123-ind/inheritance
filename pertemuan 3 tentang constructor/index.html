@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>membuat constructor</title>
+</head>
+<body>
+    <script>
+        class mahasiswa{
+         constructor( nama, nim, tahun) {
+            this.nama = nama;
+            this.nim = nim;
+            this.tahun = tahun;
+
+         }
+         tampilkan(){
+            document.writeln(`Halo, saya ${this.nama} dengan NIM ${this.nim}. Saya berada di tahun ${this.tahun}. <br>`);
+         }
+
+        }
+
+        let mahasiswa1 = new mahasiswa("nazril", 2403040168, 2024);
+        let mahasiswa2 = new mahasiswa("leli", 2403040162, 2024);
+        let mahasiswa3 = new mahasiswa("huda", 2403040164, 2024);
+        let mahasiswa4 = new mahasiswa("yusron", 2403040169, 2024);
+
+        mahasiswa1.tampilkan();
+        mahasiswa2.tampilkan();
+        mahasiswa3.tampilkan();
+        mahasiswa4.tampilkan();
+    </script>
+    
+</body>
+</html>
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balok dan Tabung</title>
+</head>
+<body>
+    <script>
+        class Balok {
+            constructor(p, l, t) {
+                this.panjang = p;
+                this.lebar = l;
+                this.tinggi = t;
+            }
+            hitungVolume() {
+                let volume = this.panjang * this.lebar * this.tinggi;
+                console.log("Volume balok dengan panjang " + this.panjang + " cm, lebar " + this.lebar + " cm, dan tinggi " + this.tinggi + " cm adalah " + volume + " cm³");
+            }
+            hitungLuasPermukaan() {
+                let luasPermukaan = 2 * (this.panjang * this.lebar + this.panjang * this.tinggi + this.lebar * this.tinggi);
+                console.log("Luas permukaan balok adalah " + luasPermukaan + " cm²");
+            }
+        }
+
+        class Tabung {
+            constructor(r, t) {
+                this.jari = r;
+                this.tinggi = t;
+            }
+            hitungVolume() {
+                let volume = 3.14 * this.jari * this.jari * this.tinggi;
+                console.log("Volume tabung dengan jari-jari " + this.jari + " cm dan tinggi " + this.tinggi + " cm adalah " + volume + " cm³");
+            }
+            hitungLuasPermukaan() {
+                let luasPermukaan = 2 * 3.14 * this.jari * (this.jari + this.tinggi);
+                console.log("Luas permukaan tabung adalah " + luasPermukaan + " cm²");
+            }
+        }
+
+        let ulangi = "y";
+        while (ulangi === "y") {
+            console.clear();
+            console.log("===== WEB PENGHITUNG BANGUN RUANG =====");
+            console.log("1. Balok");
+            console.log("2. Tabung");
+            
+            let pilihanBangunan = Number(prompt("Pilih salah satu:"));
+            
+            if (pilihanBangunan === 1) {
+
+                
+
+                
+                let p = Number(prompt("Masukkan panjang balok: "));
+                let l = Number(prompt("Masukkan lebar balok: "));
+                let t = Number(prompt("Masukkan tinggi balok: "));
+                let balok = new Balok(p, l, t);
+                balok.hitungVolume();
+                balok.hitungLuasPermukaan();
+            }
+            else if (pilihanBangunan === 2) {
+                let r = Number(prompt("Masukkan jari-jari tabung: "));
+                let t = Number(prompt("Masukkan tinggi tabung: "));
+                let tabung = new Tabung(r, t);
+                tabung.hitungVolume();
+                tabung.hitungLuasPermukaan();
+            }
+            else {
+                console.log("milih na sing leres ujang!");
+            }
+            
+            ulangi = prompt("Apakah ingin mengulang? (y/t)");
+        }
+        console.log("==== TERIMA KASIH ====");
+    </script>
+</body>
+</html>

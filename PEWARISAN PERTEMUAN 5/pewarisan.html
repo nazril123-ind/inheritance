@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Parent class (Super Class)
+class mahasiswa {
+    constructor(nama, umur) {
+        this.name = nama;
+        this.age = umur;
+    }
+
+    tampilkan() {
+        console.log("hai nama saya "  +this.name , "dan umur saya" + this.age, "tahun.");
+    }
+}
+
+// Child class (Sub Class) yang mewarisi dari Person
+class Student extends mahasiswa {
+    constructor(nama, umur, programstudi) {
+        super(nama, umur); // Memanggil constructor dari Parent class
+        this.major = programstudi;
+    }
+
+    tampilkan() {
+        super.tampilkan();
+        console.log(`${this.name} sedang menempuh program studi ${this.major}.`);
+    }
+}
+
+// Contoh penggunaan
+const student1 = new Student("Nazril", 19, "Informatics Engineering");
+student1.tampilkan(); // Dari Parent class
+
+const student2 = new Student("leli", 19, "Informatics Engineering");
+student2.tampilkan(); // Dari Parent class
+  
+
+    </script>
+</body>
+</html>

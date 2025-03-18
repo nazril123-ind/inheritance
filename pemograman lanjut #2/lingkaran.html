@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>menghitung luas dan keliling lingkaran </title>
+</head>
+<body>
+    <script>
+class Lingkaran{
+    hitungluas(){
+        console.log("========Proses menghitung luas lingkaran=======");
+        let r = Number(prompt("Masukan jari-jari lingkaran"));
+        let Luas = 3.14 * r * r;
+        console.log("luas lingkaran dengan jari jari "+ r +" adalah " + Luas);
+
+    }
+     
+    hitungkeliling(r){
+     
+     let keliling= 2 * 3.14 * r;
+     console.log("Keliling lingkaran dengan jari jari "+ r +"adalah"+ keliling);
+
+    }
+
+}
+
+let linkaran =new Lingkaran();
+let ulang = "iya";
+while(ulang === "iya")
+{
+    console.clear();
+    console.log("===selamat datang di web penghitung luas dan keliling lingkaran===");
+    console.log("pilihan");
+    console.log("1. hitung luas lingkaran");
+    console.log("2. hitung keliling lingkaran");
+    let pilihan= Number(prompt("masukan pilihan anda!"));
+    if (pilihan === 1) {
+        linkaran.hitungluas();
+    }
+    else if (pilihan === 2)
+    {
+        console.log("========proses menghitung keliling lingkarang========");
+        let jari = Number(prompt("masukan jari jari nya"));
+        linkaran.hitungkeliling(jari);
+
+
+    }
+
+    else {
+        console.log("maaf pilihan anda tidak terdaftar");
+    }
+    
+    ulang=prompt("apakah anda mau menghitung kembali ? (iya/tidak)");
+
+}
+console.log("====TERIMA KASIH SUDAH MENGGUNAKAN WEB INI===");
+
+    </script>
+    
+</body>
+</html>

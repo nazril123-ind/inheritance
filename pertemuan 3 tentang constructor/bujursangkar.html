@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lingkaran, Bujur Sangkar, persegi panjang</title>
+</head>
+<body>
+    <script>
+//PARENT CLASS(Super Class)
+class BangunDatar {
+    hitungLuas (){
+        console.log("Berikut merupakan hasil perhitungan luas dengan  bangun datar yang anda pilih");
+    }
+    hitungKeliling(){
+        console.log("Berikut merupakan hasil perhitungan Keliling dengan  bangun datar yang anda pilih");
+    }
+}
+
+
+
+class Lingkaran extends BangunDatar {
+    constructor(r) {
+        super();
+        this.jari = r;
+    }
+    hitungLuas() {
+        super.hitungLuas ();
+        let luas = 3.14 * this.jari * this.jari;
+        console.log("Luas lingkaran dengan jari-jari " + this.jari + " cm adalah " + luas + " cm²");
+    }
+    hitungKeliling() {
+        super.hitungKeliling ();
+        let keliling = 2 * 3.14 * this.jari;
+        console.log("Keliling lingkaran dengan jari-jari " + this.jari + " cm adalah " + keliling + " cm");
+    }
+}
+
+class BujurSangkar extends BangunDatar {
+    constructor(s) {
+        super();
+        this.sisi = s;
+    }
+    hitungLuas() {
+        super.hitungLuas ();
+        let luas = this.sisi * this.sisi;
+        console.log("Luas bujur sangkar dengan sisi " + this.sisi + " cm adalah " + luas + " cm²");
+    }
+    hitungKeliling() {
+        super.hitungKeliling ();
+        let keliling = 4 * this.sisi;
+        console.log("Keliling bujur sangkar dengan sisi " + this.sisi + " cm adalah " + keliling + " cm");
+    }
+}
+
+class PersegiPanjang extends BangunDatar {
+    constructor(p,l) {
+        super();
+        this.panjang = p;
+        this.lebar = l;
+       
+    }
+    hitungLuas() {
+        super.hitungLuas ();
+        let luas = this.panjang * this.lebar;
+        console.log("Luas Persegi Panjang dengan panjang " + this.panjang + " cm dan lebar " + this.lebar + " cm adalah " + luas + " cm²");
+    }
+    hitungKeliling() {
+        super.hitungKeliling ();
+        let keliling = 2 * (this.panjang + this.lebar);
+        console.log("Keliling Persegi panjang  adalah " + keliling + " cm");
+    }
+}
+
+let ulangi = "y";
+while (ulangi === "y") {
+    console.clear();
+    console.log(" TUGAS PEMOGRAMAN LANJUT");
+    console.log("NAMA = NAZRIL JAYA SUPRIATMAN ");
+    console.log("NIM = 2403040168");
+    console.log("= WEB PENGHITUNG BANGUN DATAR =");
+    console.log("1. Lingkaran");
+    console.log("2. Bujur Sangkar");
+    console.log("3. Persegi Panjang");
+    
+    let pilihanBangunan = Number(prompt("Pilih salah satu:"));
+    
+    if (pilihanBangunan === 1) {
+        console.log ("===== WEB PENGHITUNG LINGKARAN =====");
+        console.log("1.Hitung Luas");
+        console.log("2.Hitung Keliling");
+        let pilihanLingkaran = Number(prompt("Pilih salah satu:"));
+        if (pilihanLingkaran === 1) {
+            let jariJari = Number(prompt("Masukkan jari-jari lingkaran"));
+            let LINGKARAN= new Lingkaran(jariJari);
+            LINGKARAN.hitungLuas();
+             } 
+             else if (pilihanLingkaran === 2) {
+               let jariJari = Number(prompt("Masukkan jari-jari lingkaran"));
+               let LINGKARAN = new Lingkaran(jariJari);
+               LINGKARAN.hitungKeliling();
+            }
+            else {
+            console.log("Pilihan tidak tersedia ujang/neng!");
+        }
+        }
+
+    else if (pilihanBangunan === 2) {
+        console.log("=====WEB PENGHITUNG BUJUR SANGKAR====")  
+        console.log("1. Hitung Luas");
+        console.log("2. Hitung Keliling");
+        let pilihanBujurSangkar = Number(prompt("Pilih salah satu:"));
+        if (pilihanBujurSangkar === 1) {
+            let sisi=Number(prompt("Masukan sisi bujur sangkar"));
+            let BUJUR_SANGKAR = new BujurSangkar(sisi);
+            BUJUR_SANGKAR.hitungLuas();
+
+    
+        }
+        else if (pilihanBujurSangkar === 2) {
+        let sisi=Number(prompt("Masukan sisi bujur sangkar"));
+        let BUJUR_SANGKAR = new BujurSangkar(sisi);
+        BUJUR_SANGKAR.hitungKeliling();
+
+        
+        }
+        else{
+            console.log("Pilihan tidak tersedia ujang/neng  !");
+        }
+    } 
+    else if (pilihanBangunan === 3) {
+        console.log("WEB PENGHITUNG PERSEGI PANJANG");
+        console.log("1. Hitung Luas");
+        console.log("2. Hitung Keliling");
+        let pilihanPersegiPanjang = Number(prompt("Pilih salah satu:"));
+
+        if (pilihanPersegiPanjang === 1) {
+            let Panjang = Number(prompt("Masukkan panjang persegi panjang:"));
+            let lebar = Number(prompt("Masukkan Lebar persegi panjang:"));
+            
+            let PERSEGIPANJANG = new PersegiPanjang(Panjang,lebar);
+            PERSEGIPANJANG.hitungLuas();
+        }
+        else if (pilihanPersegiPanjang === 2) {
+            let Panjang = Number(prompt("Masukkan panjang persegi panjang:"));
+            let lebar = Number(prompt("Masukkan Lebar persegi panjang:"));
+            let PERSEGIPANJANG = new PersegiPanjang(Panjang,lebar);
+            PERSEGIPANJANG.hitungKeliling();
+        }
+        else{
+            console.log("Pilihan tidak tersedia ujang/neng!");
+        }
+    }
+    else {
+        console.log("Pilihan tidak tersedia ujang/neng!");
+    }
+    
+    ulangi = prompt("Apakah ingin mengulang? (y/t)");
+}
+
+console.log("==== TERIMA KASIH ====");
+    </script>
+</body>
+</html>
